@@ -64,17 +64,17 @@ def imprimir_planilla():
             if opc ==1:
                 cargo="CEO"
                 reporte="Reporte_ceo.txt"
-                
-            if opc == 2:
+            elif opc == 2:
                 cargo="Desarrollador"
                 reporte="Reporte_Desarrollador.txt"
-            if opc == 3: 
+            elif opc == 3: 
                 cargo="Analista de Datos"
                 reporte="Reporte_Analista de Datos.txt"
-            with open("C:/Users/Nicol/OneDrive/Escritorio/CARPETA IMPORTANTE/PYTHON/PYTHON/src/Nueva carpeta/empresa.csv", mode="r") as file:
-                lector = csv.reader(file)
-                next(lector)  # Saltar el encabezado
-                for trabajador in lector:
-                    if trabajador[1] == opc:
-                        with open(f"C:/Users/Nicol/OneDrive/Escritorio/CARPETA IMPORTANTE/PYTHON/PYTHON/src/Nueva carpeta/{reporte}", mode="w") as file_reporte:
-                            file_reporte.write(f"Nombre: {trabajador[0]}, Cargo: {trabajador[1]}, Sueldo Bruto: {trabajador[2]}, Descuento Salud: {trabajador[3]}, Descuento AFP: {trabajador[4]}, Sueldo Líquido: {trabajador[5]}\n")
+
+        with open("C:/Users/Nicol/OneDrive/Escritorio/CARPETA IMPORTANTE/PYTHON/PYTHON/src/Nueva carpeta/empresa.csv", mode="r") as file:
+            lector = csv.reader(file)
+            next(lector)  # Saltar el encabezado
+            for trabajador in lector:
+                if trabajador[1] == cargo:
+                    with open(f"C:/Users/Nicol/OneDrive/Escritorio/CARPETA IMPORTANTE/PYTHON/PYTHON/src/Nueva carpeta/{reporte}", mode="w") as file_reporte:
+                        file_reporte.write(f"Nombre: {trabajador[0]}, Cargo: {trabajador[1]}, Sueldo Bruto: {trabajador[2]}, Descuento Salud: {trabajador[3]}, Descuento AFP: {trabajador[4]}, Sueldo Líquido: {trabajador[5]}\n")

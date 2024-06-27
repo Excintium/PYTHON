@@ -1,0 +1,1 @@
+Nombre: Homero J Simpson, Cargo: CEO, Sueldo Bruto: 1000000, Descuento Salud: 70000.0, Descuento AFP: 120000.0, Sueldo Líquido: 810000.0

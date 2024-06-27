@@ -1,0 +1,1 @@
+Nombre: Lenny L Lenard, Cargo: Desarrollador, Sueldo Bruto: 900000, Descuento Salud: 63000.00000000001, Descuento AFP: 108000.0, Sueldo L�quido: 729000.0
