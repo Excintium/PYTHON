@@ -61,9 +61,6 @@ def imprimir_planilla():
                 contador+=1
             opc=int(input("Ingresa tu opcion: "))
             if opc ==1:
-                ceo=[]
-                for trabajador in lector:
-                    if trabajador[1] == "CEO":
-                        ceo.append(trabajador[1])
-                        with open("C:/Users/Nicol/OneDrive/Escritorio/CARPETA IMPORTANTE/PYTHON/PYTHON/src/Nueva carpeta/reporte_ceo.txt",mode="w") as file:
-                            file.write(ceo)
+                if trabajador[1] == "CEO":
+                    with open("C:/Users/Nicol/OneDrive/Escritorio/CARPETA IMPORTANTE/PYTHON/PYTHON/src/Nueva carpeta/Reporte_CEO.txt", mode="w") as file:
+                        file.write(f"Nombre: {t['nombre']}, Cargo: {t['cargo']}, Sueldo Bruto: {t['sueldo_bruto']}, Descuento Salud: {t['descuento_salud']}, Descuento AFP: {t['descuento_afp']}, Sueldo Líquido: {t['sueldo_liquido']}")
