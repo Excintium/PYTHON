@@ -60,15 +60,21 @@ def imprimir_planilla():
                 print(f"{contador}.- {trabajador[1]}")
                 contador+=1
             opc=int(input("Ingresa tu opcion: "))
+            
             if opc ==1:
+                cargo="CEO"
+                reporte="Reporte_ceo.txt"
+                
+            if opc == 2:
+                cargo="Desarrollador"
+                reporte="Reporte_Desarrollador.txt"
+            if opc == 3: 
+                cargo="Analista de Datos"
+                reporte="Reporte_Analista de Datos.txt"
+            with open("C:/Users/Nicol/OneDrive/Escritorio/CARPETA IMPORTANTE/PYTHON/PYTHON/src/Nueva carpeta/empresa.csv", mode="r") as file:
+                lector = csv.reader(file)
+                next(lector)  # Saltar el encabezado
                 for trabajador in lector:
-                    if trabajador[1] == "CEO":
-                        nombre = trabajador[0]
-                        cargo = trabajador[1]
-                        sueldo_bruto = trabajador[2]
-                        descuento_salud = trabajador[3]
-                        descuento_afp = trabajador[4]
-                        sueldo_liquido = trabajador[5]
-                        
-                        with open("C:/Users/Nicol/OneDrive/Escritorio/CARPETA IMPORTANTE/PYTHON/PYTHON/src/Nueva carpeta/Reporte_CEO.txt", mode="w") as file:
-                            file.write(f"Nombre: {nombre}, Cargo: {cargo}, Sueldo Bruto: {sueldo_bruto}, Descuento Salud: {descuento_salud}, Descuento AFP: {descuento_afp}, Sueldo Líquido: {sueldo_liquido}\n")
+                    if trabajador[1] == opc:
+                        with open(f"C:/Users/Nicol/OneDrive/Escritorio/CARPETA IMPORTANTE/PYTHON/PYTHON/src/Nueva carpeta/{reporte}", mode="w") as file_reporte:
+                            file_reporte.write(f"Nombre: {trabajador[0]}, Cargo: {trabajador[1]}, Sueldo Bruto: {trabajador[2]}, Descuento Salud: {trabajador[3]}, Descuento AFP: {trabajador[4]}, Sueldo Líquido: {trabajador[5]}\n")
